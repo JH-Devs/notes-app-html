@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+:root{
+    --neon-green: #0FFF50;
+    --neon-pink:#FF10F0;
+    --neon-yellow:#FFFF33 ;
+    --neon-lila:#9D00FF;
+    --neon-orange:#FF6600;
+    --neon-blue: #00FFFF;
+    --size: 280px;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Young Serif', serif;
+    background:url('background.png')no-repeat;
+    background-size: cover;
+    background-position: center;
+   
+}
+.container{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width:100%;
+    min-height: 100vh;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding:50px;
+}
+.container .notes{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.container .notes .note{
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    background: lightcoral;
+    padding: 20px;
+}
+.container .notes .note::before{
+    content:'Dvojitým kliknutím odstraníte poznámku.';
+    font-family:sans-serif;
+    color:#576574;
+    letter-spacing: 1px;
+    position: absolute;
+    left:0;
+    bottom:0;
+    padding: 3px 0;
+    background: rgba(0,0,0,0.15);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    opacity:0;
+    transition:0.5s;
+
+}
+.container .notes .note:hover::before{
+    opacity: 1;
+}
+#start{
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    background: yellowgreen;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 150px;
+    cursor: pointer;
+}
+#start i{
+    position: absolute;
+    color:white;
+}
+.startBox{
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    z-index: 1000;
+    display: none;
+}
+.startBox textarea{
+    position: absolute;
+    top:0;
+    left:0;
+    width: var(--size);
+    height: var(--size);
+    padding: 20px;
+    outline: none;
+    font-size:24px;
+    resize: none;
+}
+.details h3{
+    user-select: none;
+}
